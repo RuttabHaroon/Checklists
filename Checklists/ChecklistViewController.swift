@@ -10,7 +10,8 @@ import UIKit
 
 class ChecklistViewController: UITableViewController  {
 
-     var items = [ChecklistItem]()
+    var items = [ChecklistItem]()
+    var checklist: Checklist!
     
     // MARK:- Lifecycle
     override func viewDidLoad() {
@@ -79,7 +80,8 @@ extension ChecklistViewController {
     }
     
     func setUp() {
-         navigationController?.navigationBar.prefersLargeTitles = true
+        title = checklist.name
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     func configureCheckmark(for cell: UITableViewCell,
